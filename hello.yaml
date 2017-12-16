@@ -1,0 +1,7 @@
+image: ysku/hello:lastest
+manifests:
+  -
+    image: ysku/hello:amd64
+    platform:
+      architecture: amd64
+      os: linux
