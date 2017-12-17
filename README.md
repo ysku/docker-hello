@@ -8,3 +8,30 @@
 - クライアントはHTTPレスポンス内で返却された Content-Type に基づいてイメージマニフェストを判別する
 
 [*related api](https://docs.docker.com/registry/spec/api/)
+
+### [Manifest Tool](https://github.com/estesp/manifest-tool)
+#### Installation
+download from [here](https://github.com/estesp/manifest-tool/releases) and add execute permission.
+
+#### Usage
+**inspect**
+```
+manifest-tool inspect [image]
+```
+
+**create/push**
+```
+manifest-tool --username [username] \
+              --password [password] \
+              push \
+              from-spec \
+              hello.yaml
+
+manifest-tool --username [username] \
+              --password [password] \
+              push \
+              from-args \
+              --platforms linux/amd64 \
+              --template ysku/hello:latest \
+              --target ysku/hello:amd64
+```
